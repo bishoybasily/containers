@@ -12,7 +12,6 @@ public class Main {
 
         var main = new Main();
 
-
         if (args.length > 0) {
             switch (args[0]) {
                 case "server":
