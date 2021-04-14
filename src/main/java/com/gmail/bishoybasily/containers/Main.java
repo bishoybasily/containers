@@ -25,7 +25,7 @@ public class Main {
                     return;
                 case "print":
                     System.getenv().forEach((k, v) -> {
-                        System.out.printf("%s=%s", k, v);
+                        System.out.printf("%s=%s%n", k, v);
                     });
                     break;
             }
