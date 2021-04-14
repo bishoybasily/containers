@@ -8,8 +8,6 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        System.out.printf("Got: %s%n", Arrays.toString(args));
-
         var main = new Main();
 
         if (args.length > 0) {
@@ -26,9 +24,11 @@ public class Main {
                     System.getenv().forEach((k, v) -> {
                         System.out.printf("%s=%s%n", k, v);
                     });
-                    break;
+                    return;
             }
         }
+
+        System.out.printf("Got: %s%n", Arrays.toString(args));
 
     }
 
