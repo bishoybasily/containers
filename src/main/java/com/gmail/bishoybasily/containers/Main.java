@@ -16,14 +16,10 @@ public class Main {
                     main.server(Integer.parseInt(args[1]));
                     return;
                 case "echo":
-                    if (args.length == 4 && args[2].equals(">")) {
-                        main.write(args[1], args[3]);
-                    }
+                    if (args.length == 4 && args[2].equals(">")) main.write(args[1], args[3]);
                     return;
                 case "print":
-                    System.getenv().forEach((k, v) -> {
-                        System.out.printf("%s=%s%n", k, v);
-                    });
+                    System.getenv().forEach((k, v) -> System.out.printf("%s=%s%n", k, v));
                     return;
             }
         }
