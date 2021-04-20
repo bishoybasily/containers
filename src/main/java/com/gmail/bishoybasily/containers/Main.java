@@ -10,18 +10,16 @@ public class Main {
 
         var main = new Main();
 
-        if (args.length > 0) {
-            switch (args[0]) {
-                case "server":
-                    main.server(Integer.parseInt(args[1]));
-                    return;
-                case "echo":
-                    if (args.length == 4 && args[2].equals(">")) main.write(args[1], args[3]);
-                    return;
-                case "print":
-                    System.getenv().forEach((k, v) -> System.out.printf("%s=%s%n", k, v));
-                    return;
-            }
+        if (args.length > 0) switch (args[0]) {
+            case "server":
+                main.server(Integer.parseInt(args[1]));
+                return;
+            case "echo":
+                if (args.length == 4 && args[2].equals(">")) main.write(args[1], args[3]);
+                return;
+            case "print":
+                System.getenv().forEach((k, v) -> System.out.printf("%s=%s%n", k, v));
+                return;
         }
 
         System.out.printf("Got: %s%n", Arrays.toString(args));
