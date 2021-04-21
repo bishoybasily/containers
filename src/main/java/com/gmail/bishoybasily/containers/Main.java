@@ -14,7 +14,6 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-
     @Bean
     public CommandLineRunner runner(TodoRepo repo) {
         return args -> {
