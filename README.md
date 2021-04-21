@@ -1,4 +1,6 @@
-# Docker & Kubernetes for JAVA Developers
+# Containers for Java & Angular Developers
+
+![Banner](banner.png)
 
 ## Environment Setup
 
