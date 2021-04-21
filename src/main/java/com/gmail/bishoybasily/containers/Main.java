@@ -1,67 +1,26 @@
 package com.gmail.bishoybasily.containers;
 
-import java.io.*;
-import java.net.ServerSocket;
-import java.util.Arrays;
+import com.gmail.bishoybasily.containers.model.Todo;
+import com.gmail.bishoybasily.containers.model.TodoRepo;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) throws Exception {
-
-        var main = new Main();
-
-        if (args.length > 0) switch (args[0]) {
-            case "server":
-                main.server(Integer.parseInt(args[1]));
-                return;
-            case "echo":
-                if (args.length == 4 && args[2].equals(">")) main.write(args[1], args[3]);
-                return;
-            case "print":
-                System.getenv().forEach((k, v) -> System.out.printf("%s=%s%n", k, v));
-                return;
-        }
-
-        System.out.printf("Got: %s%n", Arrays.toString(args));
-
+        SpringApplication.run(Main.class, args);
     }
 
-    private void write(String content, String path) throws Exception {
 
-        var file = new File(path);
-        file.getParentFile().mkdirs();
-        var writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
-
-        writer.write(content);
-        writer.newLine();
-        writer.flush();
-        writer.close();
-
-    }
-
-    private void server(int port) throws Exception {
-
-        var server = new ServerSocket(port);
-        System.out.printf("Server started and listening on port: %d%n", port);
-        var client = server.accept();
-        System.out.printf("New client connected%n");
-
-        var reader = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        var writer = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
-
-        var line = reader.readLine();
-
-        writer.write(String.format("Thank you for sending me (%s)", line));
-        writer.newLine();
-        writer.flush();
-
-        System.out.printf("Cleaning up...%n");
-
-        reader.close();
-        writer.close();
-        client.close();
-        server.close();
-
+    @Bean
+    public CommandLineRunner runner(TodoRepo repo) {
+        return args -> {
+            var todo = repo.save(new Todo().setDescription("hello mongo")).block();
+            System.out.println(todo);
+        };
     }
 
 }

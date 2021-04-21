@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:toor@mongodb:27017/session3?authSource=admin
