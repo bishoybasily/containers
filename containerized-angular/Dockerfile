@@ -3,7 +3,7 @@ WORKDIR /app
 ADD . /app
 RUN npm install
 ARG ang_config='prod'
-RUN npx ng build -c=$ang_config --output-path=dist
+RUN npx ng build -c ${ang_config} --output-path=dist
 
 FROM httpd:2.4
 COPY --from=builder /app/dist/ /usr/local/apache2/htdocs/
