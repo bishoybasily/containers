@@ -5,6 +5,7 @@ services:
   mongodb:
     container_name: mongodb
     image: mongo:4.4.5-bionic
+    restart: unless-stopped
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=toor
@@ -13,16 +14,20 @@ services:
     networks:
       - session3
 
-  mysql:
-    container_name: mysql
-    image: mysql:8
-    environment:
-      - MYSQL_ROOT_PASSWORD=toor
-    ports:
-      - 3306:3306
-    networks:
-      - session3
+#  mysql:
+#    container_name: mysql
+#    image: mysql:8
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=toor
+#    ports:
+#      - 3306:3306
+#    networks:
+#      - session3
 
 networks:
   session3:
     name: session3
+
+
+# builder pattern
+# building from compose
