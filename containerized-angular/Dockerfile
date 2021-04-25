@@ -2,7 +2,7 @@ FROM node:14.16.1 as builder
 WORKDIR /app
 ADD . /app
 RUN npm install
-ARG ang_config
+ARG ang_config='prod'
 RUN npx ng build -c=$ang_config --output-path=dist
 
 FROM httpd:2.4

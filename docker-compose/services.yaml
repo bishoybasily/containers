@@ -14,6 +14,14 @@ services:
     networks:
       - session3
 
+
+  frontend:
+    container_name: angular_app
+    image: session:3.1
+    build: ../containerized-angular
+    ports:
+      - 80:80
+
 #  mysql:
 #    container_name: mysql
 #    image: mysql:8
