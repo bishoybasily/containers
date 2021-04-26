@@ -6,5 +6,19 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'con-ang';
+
+  dictionary: any;
+
+  constructor() {
+    this.dictionary = {
+      pageX: {
+        tab1: {
+          paragraphY: "hello abc"
+        }
+      }
+    }
+  }
+
 }

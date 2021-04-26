@@ -14,7 +14,6 @@ services:
     networks:
       - session3
 
-
   frontend:
     container_name: angular_app
     image: session:3.1
