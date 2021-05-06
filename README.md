@@ -31,3 +31,8 @@
 * Session 1:
     * [1.0](session1.0)
     * [1.1](session1.1)
+    * [2.0](session2.0)
+    * [3.0](session3.0)
+    * [4.0](session4.0)
+    * [4.1](session4.1)
+
