@@ -13,7 +13,7 @@
 * you can always refer to ```kubectl explain``` for documentation about a particular resource for example to know what
   the pod spec attributes run ```kubectl explain pods.spec```
 
-##### Create a POD (single-container)
+##### Create ur first NAMESPACE and update the POD
 
 * create a yaml file (for instance namespace.yaml) with the following contents
 
