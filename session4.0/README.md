@@ -1,4 +1,4 @@
-### Session 4.1 (Kubernetes)
+### Session 4.0 (Kubernetes)
 
 ### VERY IMPORTANT
 

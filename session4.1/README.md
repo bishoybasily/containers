@@ -1,4 +1,4 @@
-### Session 4.0 (Kubernetes)
+### Session 4.1 (Kubernetes)
 
 ### VERY IMPORTANT
 
@@ -11,7 +11,7 @@
   know the required values for the `apiVersion` & `kind`
 * metadata is an object and must include a `name` attribute which is a unique identifier for the resource
 * you can always refer to ```kubectl explain``` for documentation about a particular resource for example to know what
-  the pod spec attributes run ```kubectl explain pods.spec```
+  the pod spec attributes run ```kubectl explain pods.spec.containers```
 
 ##### Create ur first NAMESPACE and update the POD
 
