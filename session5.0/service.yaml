@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pod1
+spec:
+  selector:
+    app: mysql
+    type: database
+    team: db_admins
+    provider: oracle
+  ports:
+    - port: 3306
+      targetPort: 3306
+      protocol: TCP
+  type: NodePort
