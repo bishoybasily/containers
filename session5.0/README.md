@@ -47,6 +47,11 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod1
+  labels:
+    app: mysql
+    type: database
+    team: db_admins
+    provider: oracle
 spec:
   containers:
     - name: mysql
@@ -60,7 +65,7 @@ spec:
   volumes:
     - name: volume01
       hostPath:
-        path:  /data/mysql
+        path: /data/mysql
 ```
 
 * apply the pod resource again (make sure that pod created in the previous session is removed before creating it,
