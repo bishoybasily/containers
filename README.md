@@ -34,4 +34,7 @@
 * [3.0](session3.0)
 * [4.0](session4.0)
 * [4.1](session4.1)
+* [5.0](session5.0)
+* [6.0](session6.0)
+
 
