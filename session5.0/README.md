@@ -34,7 +34,12 @@ spec:
       protocol: TCP
   type: NodePort
 ```
-
+* this service is of type NodePort, service types tells how and from where this service can be accessed:
+  * `ClusterIP`: means this service is accessible only from inside the cluster (from other pods)
+  * `NodePort`: means this service is accessible form inside and outside the cluster through the randomly created port and any node ip
+  * `LoadBalancer`: means this service is accessible form inside and outside the cluster through the provisioned endpoint by the cloud provider
+  * `ExternalName`: when you want to bring external endpoint inside the cluster as a native kubernetes service (you'll need to set the externalName to point to the external endpoint)
+  
 * run ```kubectl apply -f /path/to/service.yaml``` to apply (create) this service
 * verify that your service is created, use ```kubectl get services``` this will show a table of all services in the
   cluster (in the default namespace)

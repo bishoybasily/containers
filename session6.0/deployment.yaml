@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: containers-deployment
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: containers
+      type: springboot
+  template:
+    metadata:
+      name: containers
+      labels:
+        app: containers
+        type: springboot
+    spec:
+      containers:
+        - name: containers
+          image: bishoybasily/containers:1.0-SNAPSHOT
+          resources:
+            requests:
+              cpu: "0.5"
+              memory: "512Mi"
+            limits:
+              cpu: "2000m"
+              memory: "2Gi"
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /api
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 5
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /api
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+            successThreshold: 1

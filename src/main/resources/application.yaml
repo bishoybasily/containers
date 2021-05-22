@@ -1,4 +1,0 @@
-spring:
-  data:
-    mongodb:
-      uri: mongodb://root:toor@${MONGODB_HOST:127.0.0.1}:27017/session3?authSource=admin

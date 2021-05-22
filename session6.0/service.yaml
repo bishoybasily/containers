@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: containers
+spec:
+  selector:
+    app: containers
+    type: springboot
+  ports:
+    - name: default
+      port: 80
+      targetPort: 8080
+      protocol: TCP
+  type: LoadBalancer
