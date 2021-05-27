@@ -36,5 +36,5 @@
 * [4.1](session4.1)
 * [5.0](session5.0)
 * [6.0](session6.0)
-
+* [7.0](session7.0)
 
